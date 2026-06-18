@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "threadhaus.db"
 CONFIRMATION_DIR = DATA_DIR / "order_confirmations"
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 DEFAULT_PORT = 8000
 
 PRODUCTS = [
