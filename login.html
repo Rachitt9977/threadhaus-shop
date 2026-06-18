@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Threadhaus Outfitters</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-page">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Threadhaus Outfitters home">
+      <span class="brand-mark" aria-hidden="true">TH</span>
+      <span>Threadhaus</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="index.html#shop">Shop</a>
+      <a href="index.html#drops">Drops</a>
+      <a href="index.html#fit">Fit</a>
+    </nav>
+    <a class="login-link" href="index.html">Back to shop</a>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-panel" aria-label="Account access">
+      <div class="auth-art">
+        <img src="assets/product-jacket.png" alt="Threadhaus jacket">
+      </div>
+      <div class="auth-card">
+        <p class="eyebrow">Account</p>
+        <h1 id="authTitle">Login</h1>
+        <div class="auth-tabs" role="tablist" aria-label="Account mode">
+          <button class="auth-tab is-active" type="button" data-mode="login">Login</button>
+          <button class="auth-tab" type="button" data-mode="register">Register</button>
+        </div>
+        <form id="authForm">
+          <label class="field" id="nameField" hidden>
+            <span>Name</span>
+            <input id="nameInput" name="name" autocomplete="name">
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input id="emailInput" name="email" type="email" autocomplete="email" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input id="passwordInput" name="password" type="password" autocomplete="current-password" required minlength="6">
+          </label>
+          <button class="checkout-button" id="authSubmit" type="submit">Login</button>
+          <p class="auth-status" id="authStatus" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Threadhaus Outfitters</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Threadhaus Outfitters home">
+      <span class="brand-mark" aria-hidden="true">TH</span>
+      <span>Threadhaus</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#shop">Shop</a>
+      <a href="#drops">Drops</a>
+      <a href="#fit">Fit</a>
+    </nav>
+    <div class="header-actions">
+      <a class="login-link" id="accountLink" href="login.html">Login</a>
+      <button class="logout-button" id="logoutButton" type="button" hidden>Logout</button>
+      <button class="cart-button" id="openCart" type="button" aria-label="Open cart">
+        Cart <span id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Threadhaus new collection">
+      <img class="hero-image" src="assets/hero-studio.png" alt="Studio display with jackets, sneakers, cap, and shopping bag">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="eyebrow">New season edit</p>
+        <h1>Threadhaus Outfitters</h1>
+        <p class="hero-copy">Street-ready clothing, shoes, caps, and carry pieces built around easy everyday fits.</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#shop">Shop collection</a>
+          <a class="secondary-link" href="#drops">View drops</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="category-band" id="drops" aria-label="Featured departments">
+      <article>
+        <span>01</span>
+        <h2>Layered staples</h2>
+        <p>Tees, hoodies, jackets, and joggers for quick outfit building.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>Daily footwear</h2>
+        <p>Sneakers and slides with relaxed silhouettes and strong color hits.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>Finishing pieces</h2>
+        <p>Caps and bags that make casual fits feel complete.</p>
+      </article>
+    </section>
+
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Catalog</p>
+          <h2>Shop the edit</h2>
+        </div>
+        <div class="shop-tools">
+          <label class="search-wrap" for="searchInput">
+            <span aria-hidden="true">Search</span>
+            <input id="searchInput" type="search" placeholder="tees, shoes, caps">
+          </label>
+          <select id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="low">Price low to high</option>
+            <option value="high">Price high to low</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filter-row" id="filters" aria-label="Product categories"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No matching pieces found.</p>
+    </section>
+
+    <section class="fit-section" id="fit">
+      <div class="fit-copy">
+        <p class="eyebrow">Fit room</p>
+        <h2>Build a full look in minutes</h2>
+        <p>Start with one anchor piece, choose a matching color, then add shoes and a cap to finish the outfit.</p>
+      </div>
+      <div class="fit-board" aria-label="Outfit builder preview">
+        <div class="fit-item tall">
+          <img src="assets/product-jacket.png" alt="Navy jacket">
+        </div>
+        <div class="fit-item">
+          <img src="assets/product-sneaker.png" alt="Red sneaker">
+        </div>
+        <div class="fit-item">
+          <img src="assets/product-cap.png" alt="Teal cap">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Shopping cart">
+    <div class="cart-panel">
+      <div class="cart-header">
+        <h2>Your cart</h2>
+        <button class="icon-button" id="closeCart" type="button" aria-label="Close cart">x</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-footer">
+        <form class="checkout-details" id="checkoutDetails">
+          <div class="checkout-section">
+            <h3>Delivery address</h3>
+            <label class="checkout-field" for="phoneInput">
+              <span>Phone number</span>
+              <input id="phoneInput" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="10 digit mobile number" required>
+            </label>
+            <label class="checkout-field" for="houseInput">
+              <span>House no.</span>
+              <input id="houseInput" name="house" autocomplete="address-line1" required>
+            </label>
+            <label class="checkout-field" for="streetInput">
+              <span>Street <small>(optional)</small></span>
+              <input id="streetInput" name="street" autocomplete="address-line2">
+            </label>
+            <label class="checkout-field" for="pincodeInput">
+              <span>Pincode</span>
+              <input id="pincodeInput" name="pincode" inputmode="numeric" autocomplete="postal-code" maxlength="6" required>
+            </label>
+          </div>
+          <div class="checkout-section">
+            <h3>Payment</h3>
+            <div class="payment-options" aria-label="Payment options">
+              <label><input type="radio" name="payment" value="Netbanking"> Netbanking</label>
+              <label><input type="radio" name="payment" value="Card"> Card</label>
+              <label><input type="radio" name="payment" value="Pay on Delivery"> Pay on Delivery</label>
+              <label><input type="radio" name="payment" value="UPI"> UPI</label>
+            </div>
+          </div>
+        </form>
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">&#8377;0</strong>
+        </div>
+        <button class="checkout-button" id="checkoutButton" type="button">Checkout</button>
+        <p class="cart-status" id="cartStatus" role="status"></p>
+      </div>
+    </div>
+  </aside>
+
+  <template id="productTemplate">
+    <article class="product-card">
+      <div class="product-media">
+        <img src="" alt="">
+        <span class="product-badge"></span>
+      </div>
+      <div class="product-body">
+        <div class="product-topline">
+          <p class="product-category"></p>
+          <strong class="product-price"></strong>
+        </div>
+        <h3></h3>
+        <p class="product-description"></p>
+        <div class="option-row size-options" aria-label="Sizes"></div>
+        <div class="option-row color-options" aria-label="Colors"></div>
+        <button class="add-button" type="button">Add to cart</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
